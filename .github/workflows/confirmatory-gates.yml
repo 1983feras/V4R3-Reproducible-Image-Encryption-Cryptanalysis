@@ -1,0 +1,45 @@
+name: V4-R3 Confirmatory Gates
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip numpy pytest
+      - name: G1-G2 correctness and authentication
+        run: pytest -q test_confirmatory_v1.py
+      - name: G3 V0W positive control
+        run: |
+          python v0w_positive_control.py | tee g3_v0w_result.json
+          python - <<'PY'
+          import json
+          d=json.load(open('g3_v0w_result.json'))
+          assert d['analytical_queries'] == 4, d
+          assert d['permutation_recovery_rate'] == 1.0, d
+          assert d['mask_recovery_rate'] == 1.0, d
+          assert d['plaintext_byte_recovery_rate'] == 1.0, d
+          assert d['exact_plaintext_recovery'] is True, d
+          print('G3_PASS')
+          PY
+      - name: Public deterministic test vector
+        run: python V4R3_confirmatory_v1.py | tee public_test_vector.json
+      - name: Record hashes
+        run: sha256sum V4R3_confirmatory_v1.py test_confirmatory_v1.py v0w_positive_control.py g3_v0w_result.json public_test_vector.json | tee confirmatory_hashes.sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: confirmatory-gates-evidence
+          path: |
+            g3_v0w_result.json
+            public_test_vector.json
+            confirmatory_hashes.sha256
