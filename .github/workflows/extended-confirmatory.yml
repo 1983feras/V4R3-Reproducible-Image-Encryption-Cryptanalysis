@@ -1,0 +1,35 @@
+name: extended-confirmatory
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostics:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip numpy pytest
+      - name: G1-G2 regression
+        run: pytest -q test_confirmatory_v1.py
+      - name: G5 functional session separation
+        run: PYTHONPATH=. python experiments/g5_session_functional_v1.py | tee g5_session_functional_v1.json
+      - name: Differential influence diagnostic
+        run: PYTHONPATH=. python experiments/differential_influence_v1.py | tee differential_influence_v1.json
+      - name: Nonce-reuse stress diagnostic
+        run: PYTHONPATH=. python experiments/nonce_reuse_stress_v1.py | tee nonce_reuse_stress_v1.json
+      - name: Record evidence hashes
+        run: sha256sum experiments/g5_session_functional_v1.py experiments/differential_influence_v1.py experiments/nonce_reuse_stress_v1.py g5_session_functional_v1.json differential_influence_v1.json nonce_reuse_stress_v1.json | tee extended_hashes.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extended-confirmatory-evidence
+          path: |
+            g5_session_functional_v1.json
+            differential_influence_v1.json
+            nonce_reuse_stress_v1.json
+            extended_hashes.sha256
