@@ -31,15 +31,18 @@ jobs:
           assert d['exact_plaintext_recovery'] is True, d
           print('G3_PASS')
           PY
+      - name: Session-separation diagnostic
+        run: PYTHONPATH=. python experiments/session_separation_v1.py | tee session_separation_v1.json
       - name: Public deterministic test vector
         run: python V4R3_confirmatory_v1.py | tee public_test_vector.json
       - name: Record hashes
-        run: sha256sum V4R3_confirmatory_v1.py test_confirmatory_v1.py v0w_positive_control.py g3_v0w_result.json public_test_vector.json | tee confirmatory_hashes.sha256
+        run: sha256sum V4R3_confirmatory_v1.py test_confirmatory_v1.py v0w_positive_control.py experiments/session_separation_v1.py g3_v0w_result.json session_separation_v1.json public_test_vector.json | tee confirmatory_hashes.sha256
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: confirmatory-gates-evidence
           path: |
             g3_v0w_result.json
+            session_separation_v1.json
             public_test_vector.json
             confirmatory_hashes.sha256
