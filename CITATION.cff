@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "V4-R3 Reproducible Image Encryption Cryptanalysis"
+message: "If you use this research artifact, please cite the associated manuscript and this repository version."
+type: software
+authors:
+  - family-names: "Sulaiman"
+    given-names: "Firas"
+repository-code: "https://github.com/1983feras/V4R3-Reproducible-Image-Encryption-Cryptanalysis"
+license: "NOASSERTION"
+version: "confirmatory-v1"
+date-released: 2026-10-09
