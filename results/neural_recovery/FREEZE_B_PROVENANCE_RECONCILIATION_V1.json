@@ -1,0 +1,52 @@
+{
+  "base_commit": "90b87e18b5b6d95ede7aacbc56b688e67a35d26c",
+  "canonical_remote_hashes": {
+    "config": "1225748360adcb7322fbfaf4db55774c0e93a746db1428b6b376b17141d785e8",
+    "confirmatory_config": "638c9f481347a295e424778b61d257fd946e8dd3af976dfbc06f66d4aa6eecb7",
+    "evidence": "c1622f169799e8ef8665fcf06b543bf1b5778d21beefd8dcdfa45faf8e439bb4",
+    "model": "102a7dfb47b10d797e2aa6f7b52a996a45fc2eb3714199bcd6cf2e2c940622da",
+    "spec": "eba9e4010faf88b6bf8f1d04a8c33cdf3ef47aa28a692037d328dcc6c512ad6c"
+  },
+  "created_utc": "2026-10-10T21:32:11.932462+00:00",
+  "execution_state": {
+    "DL0_executed": false,
+    "DL1_executed": false,
+    "DL2_executed": false,
+    "DL3_executed": false,
+    "DL4_executed": false,
+    "DL5_executed": false,
+    "DL6_executed": false,
+    "neural_training_executed": false
+  },
+  "historical_reviewed_hashes": {
+    "config": "caf780f9815d2377d23ca23d13dce83774f45170810826fddfa71ea6ce1a19c9",
+    "evidence": "2dd7c6241bb6d433f6e41091f63772c9ab6de199e862b37ac91a68f989ecc315",
+    "model": "b1e0cb8ad0cf7045483e7ab9d68b52404838f10417c20096ff481c3cc707f773",
+    "spec": "eba9e4010faf88b6bf8f1d04a8c33cdf3ef47aa28a692037d328dcc6c512ad6c"
+  },
+  "interpretation": {
+    "DL0_DL6_executed_at_reconciliation": false,
+    "canonical_rule": "All subsequent recovery artifacts shall reference the canonical remote hashes from commit 90b87e18b5b6d95ede7aacbc56b688e67a35d26c",
+    "historical_evidence_rewritten": false,
+    "model_architecture_changed": false,
+    "scientific_protocol_changed": false,
+    "training_outcome_available_at_reconciliation": false
+  },
+  "purpose": "Document byte-level hash divergence between the locally reviewed Freeze B artifacts and the canonical remote artifacts while preserving the historical evidence record.",
+  "record": "FREEZE_B_PROVENANCE_RECONCILIATION_V1",
+  "semantic_audit": {
+    "CNN_implementation": "PASS",
+    "CNN_parameter_count": 131907,
+    "TinyUNet_implementation": "PASS",
+    "TinyUNet_parameter_count": 2141475,
+    "forward_output_shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "historical_evidence_lineage": "PASS",
+    "output_range": "[0,1]",
+    "scientific_config_semantics": "PASS"
+  }
+}
