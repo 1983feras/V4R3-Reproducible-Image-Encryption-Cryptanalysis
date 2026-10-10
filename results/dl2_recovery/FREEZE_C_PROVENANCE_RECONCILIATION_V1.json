@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-10T21:54:21.195543+00:00",
+  "execution_state_at_reconciliation": {
+    "DL0_executed": false,
+    "DL1_executed": false,
+    "DL2_executed": false,
+    "DL3_executed": false,
+    "DL4_executed": false,
+    "DL5_executed": false,
+    "DL6_executed": false,
+    "neural_training_executed": false
+  },
+  "freeze_c_artifacts": {
+    "original_evidence_path": "results/dl2_recovery/DL2_V0W_RECOVERY_FREEZE_C_V1.json",
+    "original_evidence_sha256": "a1db6b5b3f9997de09f936265ef7c7fb2c052a83601d7bfa2989654477bd5f3a",
+    "original_spec_path": "protocol/DL2_V0W_RECOVERY_FREEZE_C_V1.md",
+    "original_spec_sha256": "7a536a61f08d334c419bece771adf7b9032e0c5e7c0599ef62969e019575a3f1",
+    "runner_path": "experiments/run_dl2_v0w_positive_control_recovery_v1.py"
+  },
+  "interpretation": {
+    "DL2_may_execute_before_remote_reconciliation": false,
+    "canonical_hash_for_future_execution": "35d107948ca17ffac8acc7589322f14cdcaefb542109953369cf0a4e30c0bf9e",
+    "difference_classification": "artifact_provenance_byte_level_divergence",
+    "historical_hash_retained_for_audit": "d19d738bf9b48dbd4522e057129c5239bb8c7f4d38959259e32777be0697ce1d",
+    "original_freeze_c_evidence_rewritten": false,
+    "scientific_protocol_changed": false
+  },
+  "provenance_mapping": {
+    "canonical_remote_runner_sha256": "35d107948ca17ffac8acc7589322f14cdcaefb542109953369cf0a4e30c0bf9e",
+    "canonical_remote_runner_verified": true,
+    "historical_locally_reviewed_runner_sha256": "d19d738bf9b48dbd4522e057129c5239bb8c7f4d38959259e32777be0697ce1d"
+  },
+  "record": "FREEZE_C_PROVENANCE_RECONCILIATION_V1",
+  "repository_state": {
+    "base_commit": "b3bce289e4a298396ea93e5faea098a35d44f872",
+    "head_verified": true,
+    "origin_main_verified": true
+  },
+  "semantic_audit": {
+    "checks": {
+      "4-query validity gate": true,
+      "CNN present": true,
+      "DL2 false": true,
+      "TinyUNet present": true,
+      "V0W required_queries": true,
+      "execution locked": true,
+      "frozen config": true,
+      "frozen model": true,
+      "preflight available": true,
+      "training false": true
+    },
+    "execution_boundary_changed": false,
+    "model_set_changed": false,
+    "positive_control_role_changed": false,
+    "required_query_gate_changed": false,
+    "scientific_protocol_changed": false,
+    "status": "PASS"
+  }
+}
