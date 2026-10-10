@@ -1,0 +1,14 @@
+Remote persistence record
+
+Branch: freeze-c-provenance-reconciliation-v1
+Base before reconciliation: b3bce289e4a298396ea93e5faea098a35d44f872
+
+Canonical runner SHA-256:
+35d107948ca17ffac8acc7589322f14cdcaefb542109953369cf0a4e30c0bf9e
+
+Historical reviewed runner SHA-256:
+d19d738bf9b48dbd4522e057129c5239bb8c7f4d38959259e32777be0697ce1d
+
+Scientific protocol changed: FALSE
+Neural training executed: FALSE
+DL2 executed: FALSE
