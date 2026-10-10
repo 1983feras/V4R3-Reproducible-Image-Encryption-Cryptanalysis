@@ -1,0 +1,42 @@
+{
+  "DL0_executed": false,
+  "DL1_executed": false,
+  "DL2_executed": false,
+  "DL3_executed": false,
+  "DL4_executed": false,
+  "DL5_executed": false,
+  "DL6_executed": false,
+  "DL2_validity_gate_required": true,
+  "base_commit": "fcbd5cfe72a541c4a260e480f2b337624bdd329a",
+  "confirmatory_config_sha256_after": "638c9f481347a295e424778b61d257fd946e8dd3af976dfbc06f66d4aa6eecb7",
+  "confirmatory_config_sha256_before": "638c9f481347a295e424778b61d257fd946e8dd3af976dfbc06f66d4aa6eecb7",
+  "confirmatory_config_unchanged": true,
+  "dataset_identity_split_before_crop": true,
+  "historical_local_only_commit_not_recovered": "134951fdbdd1c91c0fc637d770fdd6638d2640cd",
+  "implementation_file": "experiments/neural_attack_models_recovery_v1.py",
+  "implementation_sha256": "b1e0cb8ad0cf7045483e7ab9d68b52404838f10417c20096ff481c3cc707f773",
+  "model_output_shape_sanity_pass": true,
+  "models": [
+    "CNN",
+    "TinyUNet"
+  ],
+  "neural_config_file": "configs/neural_recovery_freeze_v1.json",
+  "neural_config_sha256": "caf780f9815d2377d23ca23d13dce83774f45170810826fddfa71ea6ce1a19c9",
+  "neural_training_executed": false,
+  "posthoc_tuning_allowed": false,
+  "primary_endpoint": "SSIM",
+  "record": "NEURAL_RECOVERY_FREEZE_V1",
+  "secondary_endpoints": [
+    "MSE",
+    "PSNR_dB"
+  ],
+  "seeds": [
+    17,
+    271,
+    1618,
+    4099,
+    12345
+  ],
+  "spec_file": "protocol/NEURAL_RECOVERY_FREEZE_V1.md",
+  "spec_sha256": "eba9e4010faf88b6bf8f1d04a8c33cdf3ef47aa28a692037d328dcc6c512ad6c"
+}
