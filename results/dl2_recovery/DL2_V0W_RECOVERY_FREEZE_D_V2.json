@@ -1,0 +1,39 @@
+{
+  "execution_authorized": false,
+  "execution_state": {
+    "DL0_executed": false,
+    "DL1_executed": false,
+    "DL2_executed": false,
+    "DL3_executed": false,
+    "DL4_executed": false,
+    "DL5_executed": false,
+    "DL6_executed": false,
+    "neural_training_executed": false
+  },
+  "metric": {
+    "K1": 0.01,
+    "K2": 0.03,
+    "aggregation": "mean_channels_and_spatial_windows",
+    "data_range": 1.0,
+    "gaussian_sigma": 1.5,
+    "name": "windowed_RGB_SSIM",
+    "padding": "valid",
+    "window_size": 11
+  },
+  "metric_frozen_before_any_DL2_result": true,
+  "metric_implementation_previously_unspecified": true,
+  "next_gate": "read_only_v2_semantic_audit_and_remote_persistence",
+  "reason": [
+    "prospectively_freeze_SSIM_implementation",
+    "prospectively_add_model_seed_resume"
+  ],
+  "record": "DL2_V0W_RECOVERY_FREEZE_D_V2",
+  "resume_granularity": "completed_model_seed",
+  "runner_path": "experiments/run_dl2_v0w_positive_control_recovery_freeze_d_v2.py",
+  "runner_sha256": "e42ffccb2afefd28dea805604696837b751137a7fecc19976e742a5b7bb587fb",
+  "scientific_protocol_changed_from_frozen_neural_settings": false,
+  "spec_path": "protocol/DL2_V0W_RECOVERY_FREEZE_D_V2.md",
+  "spec_sha256": "b79fe59e7d89f4c9a16acdb95498697ce0a08d11d045ad35c6893408ca4cfe9e",
+  "status": "PROSPECTIVE_NOT_EXECUTED",
+  "supersedes_for_execution": "FREEZE_D_V1_NON_EXECUTED"
+}
